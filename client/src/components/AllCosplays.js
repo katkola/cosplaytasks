@@ -19,6 +19,7 @@ const AllCosplays = (props) => {
     
 
     return (<div>
+        <h4>Current Projects</h4>
         {
         cosplays.map((cosplay, index) => {
             return (<Card variant='outlined' key={index}>

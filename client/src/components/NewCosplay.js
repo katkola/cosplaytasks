@@ -17,6 +17,7 @@ const NewCosplay = (props) => {
     }
 
     return (<div>
+        <h4>New Cosplay:</h4>
         <CosplayForm onSubmitProp={createCosplay} initialName={""} />
     </div>)
 }

@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { Card } from '@mui/material';
+import {
+    Card,
+    AppBar,
+    Toolbar
+} from '@mui/material';
 import { useNavigate, useParams } from "react-router-dom";
 import TasksByCosplay from "./TasksByCosplay";
 import NewTask from "./NewTask";
+import TopBarNav from './TopBarNav';
 
 const ViewCosplay = props => {
-    const{id} = useParams();
-    const[cosplay, setCosplay] = useState([]);
+    const { id } = useParams();
+    const [cosplay, setCosplay] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,12 +32,12 @@ const ViewCosplay = props => {
             .catch(err => console.log(err.response.data.errors))
     }
 
-    return(<>
-        View Cosplay
+    return (<>
+        <TopBarNav/>
         <h3>Name: {cosplay.name}</h3>
-        <NewTask cosplayName={cosplay.name} cosplayId={id} parentName={""} parentId={0} onSubmitProp={createTask}/>
-        <TasksByCosplay cosplayId={id}/>
-        
+        <NewTask cosplayName={cosplay.name} cosplayId={id} parentName={""} parentId={0} onSubmitProp={createTask} />
+        <TasksByCosplay cosplayId={id} />
+
 
     </>)
 }
