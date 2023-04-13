@@ -19,10 +19,6 @@ const AllTasks = (props) => {
     const [loaded, setLoaded] = useState(false);
     const navigate = useNavigate();
 
-    const removeFromList = (taskId) => {
-        setTasks(tasks.filter(task => task._id != taskId));
-    }
-
     useEffect(() => {
         axios.get("http://localhost:8000/tasks/cosplay/" + cosplayId)
             .then((res) => {
@@ -31,6 +27,10 @@ const AllTasks = (props) => {
             })
             .catch((err) => console.log(err))
     }, [])
+
+    const removeFromDom = (taskId) => {
+        setTasks(tasks.filter(task => task._id != taskId));
+    }
 
     const displayChildren = (children = tasks) => {
         let displayList = ``;
@@ -41,12 +41,12 @@ const AllTasks = (props) => {
             if (childList.length !== 0) {
                 return (
                     <>
-                        <ViewTask task={task} successCallback={() => removeFromList(task._id)} />
+                        <ViewTask task={task} removeFromDom={removeFromDom} />
                         <ul>{displayChildren(childList)}</ul>
                     </>)
             }
             return (
-                <ViewTask task={task} successCallback={() => removeFromList(task._id)} />
+                <ViewTask task={task} removeFromDom={removeFromDom} />
             )
         })
         //console.log(`Items ${displayList}`);
@@ -58,7 +58,7 @@ const AllTasks = (props) => {
         let parentId = parent;
         tasks.map((task) => {
             if (task.parentId === parentId) {
-                console.log(task.name);
+                //console.log(task.name);
                 childList.push(task);
             }
         })

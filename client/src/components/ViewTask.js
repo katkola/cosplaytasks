@@ -12,11 +12,11 @@ import {
 import TaskDelete from './TaskDelete';
 
 const ViewTask = props => {
-    const { task, successCallback } = props
+    const { task, removeFromDom } = props
     const navigate = useNavigate();
 
-    const deleteTask = e => {
-
+    const deleteTask = (taskId) => {
+        removeFromDom(taskId);
     }
 
     const createTask = taskParameters => {

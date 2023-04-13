@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from "../src/components/Main";
 import ViewCosplay from './components/ViewCosplay';
+import AllTasks from './components/AllTasks';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Main/>} path="/" />
+          <Route element={<AllTasks/>} path="/test/tasks" />
           <Route element={<ViewCosplay/>} path="cosplays/view/:id"/>
         </Routes>
       </BrowserRouter>
