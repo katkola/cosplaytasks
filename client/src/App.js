@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from "../src/components/Main";
 import ViewCosplay from './components/ViewCosplay';
 import AllTasks from './components/AllTasks';
+import FileUpload from './components/FileUpload';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route element={<Main/>} path="/" />
           <Route element={<AllTasks/>} path="/test/tasks" />
           <Route element={<ViewCosplay/>} path="cosplays/view/:id"/>
+          <Route element={<FileUpload/>} path="test/upload"/>
         </Routes>
       </BrowserRouter>
     </div>
