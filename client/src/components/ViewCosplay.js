@@ -12,6 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import TasksByCosplay from "./TasksByCosplay";
 import NewTask from "./NewTask";
 import TopBarNav from './TopBarNav';
+import Featured from './Featured';
 
 const ViewCosplay = props => {
     const { id } = useParams();
@@ -49,7 +50,8 @@ const ViewCosplay = props => {
                 <TasksByCosplay cosplayId={id} />
             </Box>
             <Box sx={{ mx: 0.5, flex: '1' }}>
-
+                <Featured/>
+                <Featured/>
             </Box>
         </Box>
 
