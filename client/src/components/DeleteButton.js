@@ -13,7 +13,7 @@ const DeleteButton = (props) => {
     }
 
     return (
-        <Button variant="outlined" onClick={deleteCosplay}>
+        <Button onClick={deleteCosplay}>
             Delete
         </Button>
     )
