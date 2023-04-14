@@ -27,11 +27,11 @@ const Main = (props) => {
         setCosplays(cosplays.filter(cosplay => cosplay._id != cosplayId));
     }
 
-    return (<div>
+    return (<div sx={{backgroundColor:"blue"}}>
         <TopBarNav />
 
         <Box sx={{ p: 2, border: '1px', mx: 0.5, display: 'flex' }}>
-            <Box sx={{ p: 2, border: '1px', mx: 1, flex:'1' }}>
+            <Box sx={{ p: 2, border: '1px', flex:'1' }}>
                 <AllCosplays cosplays={cosplays} removeFromDom={removeFromDom} />
             </Box>
             <Box sx={{ p: 2, border: '1px', mx: 0.5, flex:'1' }}>

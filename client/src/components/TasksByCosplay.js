@@ -66,22 +66,11 @@ const AllTasks = (props) => {
     }
 
     return (<div>
-        <h4>All Tasks</h4>
-        <Card>
+        <>
             {loaded &&
-                // tasks.map((task, index) => {
-                //     return (<Card variant='outlined' key={index}>
-                //         <CardContent>Task: {task.name}  for {task.cosplayName}</CardContent>
-                //         {task.parentName
-                //             ? <CardContent>Parent Task: {task.parentName}</CardContent>
-                //             : <></>}
-                //         <CardContent><TaskDelete taskId={task._id} successCallback={() => removeFromDom(task._id)} /></CardContent>
-                //     </Card>)
-                // })
-
                 displayChildren(tasks.filter(task => task.parentId == 0))
             }
-        </Card>
+        </>
 
     </div>)
 }

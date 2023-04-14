@@ -7,13 +7,16 @@ import {
     ListItem,
     ListItemText,
     IconButton,
-    Button
+    Button,
+    Card
 } from '@mui/material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import TaskDelete from './TaskDelete';
 
 const ViewTask = props => {
     const { task, removeFromDom } = props
     const navigate = useNavigate();
+    const [showSubButton, setShowSubButton] = useState(true);
 
     const deleteTask = (taskId) => {
         removeFromDom(taskId);
@@ -30,13 +33,18 @@ const ViewTask = props => {
 
     return (
         <>
-            <ListItem>
-                <ListItemText primary={task.name} />
-                <IconButton>              
+            <Card>
+                <ListItem>
+                    <ListItemText primary={task.name} />
+                    <ListItemText primary={"Details"} />
                     <TaskDelete taskId={task._id} successCallback={() => deleteTask(task._id)} />
-                </IconButton>
-                <NewTask cosplayName={task.cosplayName} cosplayId={task.cosplayId} parentName={task.name} parentId={task._id} onSubmitProp={createTask} />
-            </ListItem>
+                </ListItem>
+                {
+                    showSubButton
+                        ? <Button onClick={() => setShowSubButton(false)}>Add New Sub Task<AddCircleOutlineIcon /></Button>
+                        : <NewTask cosplayName={task.cosplayName} cosplayId={task.cosplayId} parentName={task.name} parentId={task._id} onSubmitProp={createTask} />
+                }
+            </Card>
         </>)
 }
 export default ViewTask;
