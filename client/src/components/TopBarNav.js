@@ -26,6 +26,9 @@ const TopBarNav = props => {
                     <Link style={{ textDecoration: "none" }} to={`/`}>Home</Link>
                     </Button>
                     <Button sx={{ color: '#fff' }}>
+                    <Link style={{ textDecoration: "none" }} to={`/`}>New Link</Link>
+                    </Button>
+                    <Button sx={{ color: '#fff' }}>
                     <Link style={{ textDecoration: "none" }} to={`/test/tasks`}>All Tasks</Link>
                     </Button>
                 </Box>
