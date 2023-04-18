@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
-import Main from "../src/components/Main";
-import ViewCosplay from './components/ViewCosplay';
-import AllTasks from './components/AllTasks';
+import Main from "./components/Main";
+import ViewCosplay from './components/Tasks/ViewCosplay';
+import AllTasks from './components/Tasks/AllTasks';
 import Login from './components/Users/Login';
 import useToken from './components/App/useToken';
 

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import AllCosplays from './AllCosplays';
-import NewCosplay from './NewCosplay';
+import AllCosplays from './Tasks/AllCosplays';
+import NewCosplay from './Tasks/NewCosplay';
 import {
     Card,
     AppBar,
@@ -10,8 +10,8 @@ import {
     Button,
     Toolbar
 } from '@mui/material';
-import TopBarNav from './TopBarNav';
-import Featured from './Featured';
+import TopBarNav from './Tasks/TopBarNav';
+import Featured from './Tasks/Featured';
 
 const Main = (props) => {
     const [cosplays, setCosplays] = useState([]);
