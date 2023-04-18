@@ -43,7 +43,7 @@ const ViewCosplay = props => {
             <Box sx={{ flex: '1' }}>
                 {
                     showButton
-                       ?<Button>Add New Task<AddCircleOutlineIcon/></Button>
+                       ?<Button onClick={() => setShowButton(false)}>Add New Task<AddCircleOutlineIcon/></Button>
                        :<NewTask cosplayName={cosplay.name} cosplayId={id} parentName={""} parentId={0} onSubmitProp={createTask} />
                 }
                 <TasksByCosplay cosplayId={id} />
