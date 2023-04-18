@@ -33,7 +33,6 @@ const ViewCosplay = props => {
                 console.log(res);
                 navigate(0);
             })
-            .catch(err => console.log(err.response.data.errors))
     }
 
     return (<>
