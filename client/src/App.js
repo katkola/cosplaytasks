@@ -5,6 +5,7 @@ import ViewCosplay from './components/Tasks/ViewCosplay';
 import AllTasks from './components/Tasks/AllTasks';
 import Login from './components/Users/Login';
 import useToken from './components/App/useToken';
+import Register from './components/Users/Register';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route element={<Main/>} path="/" />
           <Route element={<Login setToken={setToken}/>} path="/dashboard"/>
+          <Route element={<Register setToken={setToken}/>} path="/registration"/>
           <Route element={<AllTasks/>} path="/test/tasks" />
           <Route element={<ViewCosplay/>} path="cosplays/view/:id"/>
         </Routes>
