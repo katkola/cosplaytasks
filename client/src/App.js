@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
 import Main from "../src/components/Main";
 import ViewCosplay from './components/ViewCosplay';
 import AllTasks from './components/AllTasks';
 import Login from './components/Users/Login';
+import useToken from './components/App/useToken';
+
 
 function App() {
-  const [token, setToken] = useState();
+  const {token, setToken} = useToken();
 
   if(!token){
-    <Login setToken={setToken}/>
+    return <Login setToken={setToken}/>
   }
+
   return (
     <div className="App">
       <div className="App">
       <BrowserRouter>
         <Routes>
           <Route element={<Main/>} path="/" />
-          <Route element={<Login/>} path="/dashboard"/>
+          <Route element={<Login setToken={setToken}/>} path="/dashboard"/>
           <Route element={<AllTasks/>} path="/test/tasks" />
           <Route element={<ViewCosplay/>} path="cosplays/view/:id"/>
         </Routes>
