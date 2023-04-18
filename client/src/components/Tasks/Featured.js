@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import beidoukat2022 from '../img/beidoukat2022.jpg';
+import beidoukat2022 from '../.././img/beidoukat2022.jpg';
 
 const Featured = props => {
 

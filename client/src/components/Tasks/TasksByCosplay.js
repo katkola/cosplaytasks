@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../App.css';
 import axios from 'axios';
 import NewTask from "./NewTask"
 import {

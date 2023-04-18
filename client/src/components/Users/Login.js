@@ -38,11 +38,11 @@ export default function Login({ setToken }) {
             <form onSubmit={handleSubmit}>
                 <FormControl>
                     <InputLabel>Username</InputLabel>
-                    <OutlinedInput type="text" />
+                    <OutlinedInput value={username} onChange={(e) => setUserName(e.target.value)} type="text" />
                 </FormControl>
                 <FormControl>
                     <InputLabel>Password</InputLabel>
-                    <OutlinedInput type="password" />
+                    <OutlinedInput value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
                 </FormControl>
 
                 <Button type="submit">Submit</Button>
