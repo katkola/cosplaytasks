@@ -28,11 +28,11 @@ const AllCosplays = (props) => {
 
 
 
-    return (<Card sx={{ minWidth: 400, backgroundColor:"lavender" }}>
+    return (<Card sx={{ minWidth: 400, borderRadius:"2%", backgroundColor:"lavender" }}>
         <h4>Current Cosplay Projects</h4>
         <Table sx={{ minWidth: 400}} aria-label="simple table">
             <TableRow sx={{ display:"flex", borderBottom:"1px solid lightgrey", justifyContent:"space-between"}}>
-                <Typography>Name</Typography>
+                <Typography sx={{fontWeight:"bold"}}>Name</Typography>
                 <Typography>Actions</Typography>
             </TableRow>
         
@@ -40,11 +40,11 @@ const AllCosplays = (props) => {
             cosplays.map((cosplay, index) => {
                 return (
                     <TableRow key="index" sx={{ display:"flex", justifyContent:"space-between", margin:"3px"}}>
-                        <Typography>{cosplay.name}</Typography>
+                        <Typography sx={{fontWeight:"bold"}}>{cosplay.name}</Typography>
                         <td>
                         <ButtonGroup>
                             {/* <Button><Link to={`/cosplays/edit/${cosplay._id}`}>Edit</Link></Button> */}
-                            <Button><Link to={`/cosplays/view/${cosplay._id}`}>View</Link></Button>
+                            <Button sx={{backgroundColor:""}}><Link style={{textDecoration:"none", fontWeight:"bold"}} to={`/cosplays/view/${cosplay._id}`}>View</Link></Button>
                             <DeleteButton cosplayId={cosplay._id} successCallback={() => removeFromList(cosplay._id)} />
                         </ButtonGroup></td>
                     </TableRow>)

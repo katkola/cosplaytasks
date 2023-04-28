@@ -19,14 +19,14 @@ const CosplayForm = (props) => {
     }
 
     return (
-        <>
-            <form onSubmit={onSubmitHandler}>
+        <div >
+            <form onSubmit={onSubmitHandler} >
                 <FormControl>
-                    <InputLabel>Name:</InputLabel>
+                    <InputLabel >Name:</InputLabel>
                     <OutlinedInput type="text" value={name} onChange={(e) => setName(e.target.value)} />
                 </FormControl>
                 <Button type="submit">Submit</Button>
             </form>
-        </>)
+        </div>)
 }
 export default CosplayForm;

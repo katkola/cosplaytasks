@@ -13,7 +13,7 @@ const DeleteButton = (props) => {
     }
 
     return (
-        <Button onClick={deleteCosplay}>
+        <Button sx={{color:"red", fontWeight:"bold", backgroundColor:'lightGrey'}} onClick={deleteCosplay}>
             Delete
         </Button>
     )
