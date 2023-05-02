@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link, useNavigate, useParams } from "react-router-dom";
 import CosplayForm from './CosplayForm';
+import { Card } from '@mui/material';
 
 const NewCosplay = (props) => {
     const navigate = useNavigate();
@@ -16,9 +17,9 @@ const NewCosplay = (props) => {
             .catch(err => console.log(err.response.data.errors))
     }
 
-    return (<div>
+    return (<Card>
         <h4>New Cosplay:</h4>
         <CosplayForm onSubmitProp={createCosplay} initialName={""} />
-    </div>)
+    </Card >)
 }
 export default NewCosplay;

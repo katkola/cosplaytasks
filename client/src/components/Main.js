@@ -31,7 +31,7 @@ const Main = (props) => {
     return (<div id="maincomp" sx={{backgroundColor:"blue"}}>
         <TopBarNav />
 
-        <Box sx={{ p: 2, border: '1px', mx: 0.5, display: 'flex' }}>
+        <Box sx={{p: 2, border: '1px', display: 'flex', alignContent:'space-between' }}>
             <Box sx={{ p: 2, border: '1px', flex:'1' }}>
                 <NewCosplay />
                 <AllCosplays cosplays={cosplays} removeFromDom={removeFromDom} />

@@ -49,7 +49,7 @@ const ViewCosplay = props => {
                 <TasksByCosplay cosplayId={id} />
             </Box>
             <Box sx={{ mx: 0.5, flex: '1' }}>
-
+            {/* Want to add Multer or Other File Upload */}
             </Box>
         </Box>
         <TableFooter>
