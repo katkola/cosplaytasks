@@ -5,7 +5,8 @@ import {
     AppBar,
     Toolbar,
     Box,
-    Button
+    Button,
+    TableFooter
 } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useNavigate, useParams } from "react-router-dom";
@@ -17,7 +18,7 @@ const ViewCosplay = props => {
     const { id } = useParams();
     const [cosplay, setCosplay] = useState([]);
     const navigate = useNavigate();
-    const[showButton, setShowButton] = useState(true);
+    const [showButton, setShowButton] = useState(true);
 
     useEffect(() => {
         axios.get("http://localhost:8000/cosplays/" + id)
@@ -35,15 +36,15 @@ const ViewCosplay = props => {
             })
     }
 
-    return (<>
+    return (<div id="projectview">
         <TopBarNav />
         <h3>Name: {cosplay.name}</h3>
         <Box sx={{ display: 'flex' }}>
             <Box sx={{ flex: '1' }}>
                 {
                     showButton
-                       ?<Button onClick={() => setShowButton(false)}>Add New Task<AddCircleOutlineIcon/></Button>
-                       :<NewTask cosplayName={cosplay.name} cosplayId={id} parentName={""} parentId={0} onSubmitProp={createTask} />
+                        ? <Button onClick={() => setShowButton(false)}>Add New Task<AddCircleOutlineIcon /></Button>
+                        : <NewTask cosplayName={cosplay.name} cosplayId={id} parentName={""} parentId={0} onSubmitProp={createTask} />
                 }
                 <TasksByCosplay cosplayId={id} />
             </Box>
@@ -51,8 +52,10 @@ const ViewCosplay = props => {
 
             </Box>
         </Box>
+        <TableFooter>
+            <a href="https://storyset.com/people">People illustrations by Storyset</a>
+        </TableFooter>
 
-
-    </>)
+    </div>)
 }
 export default ViewCosplay;

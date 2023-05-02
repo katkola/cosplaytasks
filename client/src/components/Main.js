@@ -8,7 +8,8 @@ import {
     AppBar,
     Box,
     Button,
-    Toolbar
+    Toolbar,
+    TableFooter
 } from '@mui/material';
 import TopBarNav from './TopBarNav';
 import Featured from './Featured';
@@ -27,18 +28,19 @@ const Main = (props) => {
         setCosplays(cosplays.filter(cosplay => cosplay._id != cosplayId));
     }
 
-    return (<div sx={{backgroundColor:"blue"}}>
+    return (<div id="maincomp" sx={{backgroundColor:"blue"}}>
         <TopBarNav />
 
         <Box sx={{ p: 2, border: '1px', mx: 0.5, display: 'flex' }}>
             <Box sx={{ p: 2, border: '1px', flex:'1' }}>
+                <NewCosplay />
                 <AllCosplays cosplays={cosplays} removeFromDom={removeFromDom} />
             </Box>
             <Box sx={{ p: 2, border: '1px', mx: 0.5, flex:'1' }}>
-                <NewCosplay />
                 <Featured/>
             </Box>
         </Box>
+        <TableFooter><a href="https://storyset.com/people">People illustrations by Storyset</a></TableFooter>
     </div>)
 }
 export default Main;
