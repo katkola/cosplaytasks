@@ -23,7 +23,7 @@ const ViewTask = props => {
     }
 
     const createTask = taskParameters => {
-        axios.post('http://localhost:8000/tasks', taskParameters)
+        axios.post('http://localhost:8000/api/tasks', taskParameters)
             .then(res => {
                 console.log(res);
                 navigate(0);

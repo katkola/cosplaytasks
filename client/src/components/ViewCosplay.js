@@ -21,7 +21,7 @@ const ViewCosplay = props => {
     const [showButton, setShowButton] = useState(true);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/cosplays/" + id)
+        axios.get("http://localhost:8000/api/cosplays/" + id)
             .then((res) => {
                 setCosplay(res.data);
             })
@@ -29,7 +29,7 @@ const ViewCosplay = props => {
     }, [])
 
     const createTask = taskParameters => {
-        axios.post('http://localhost:8000/tasks', taskParameters)
+        axios.post('http://localhost:8000/api/tasks', taskParameters)
             .then(res => {
                 console.log(res);
                 navigate(0);

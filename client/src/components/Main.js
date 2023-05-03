@@ -19,7 +19,7 @@ const Main = (props) => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/cosplays")
+        axios.get("http://localhost:8000/api/cosplays")
             .then((res) => setCosplays(res.data))
             .catch((err) => console.log(err))
     }, [])

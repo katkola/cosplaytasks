@@ -20,7 +20,7 @@ const AllTasks = (props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/tasks/cosplay/" + cosplayId)
+        axios.get("http://localhost:8000/api/tasks/cosplay/" + cosplayId)
             .then((res) => {
                 setTasks(res.data);
                 setLoaded(true);

@@ -9,7 +9,7 @@ const NewCosplay = (props) => {
 
     const createCosplay = cosplayParameters => {
 
-        axios.post('http://localhost:8000/cosplays', cosplayParameters)
+        axios.post('http://localhost:8000/api/cosplays', cosplayParameters)
             .then(res => {
                 console.log(res);
                 navigate(0);

@@ -6,7 +6,7 @@ const DeleteButton = (props) => {
     const { cosplayId, successCallback } = props;
     
     const deleteCosplay = e => {
-        axios.delete('http://localhost:8000/cosplays/' + cosplayId)
+        axios.delete('http://localhost:8000/api/cosplays/' + cosplayId)
             .then(res=>{
                 successCallback();
             })

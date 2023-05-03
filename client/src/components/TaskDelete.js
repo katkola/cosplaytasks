@@ -6,7 +6,7 @@ const TaskDelete = (props) => {
     const { taskId, successCallback } = props;
     
     const deletetask = e => {
-        axios.delete('http://localhost:8000/tasks/' + taskId)
+        axios.delete('http://localhost:8000/api/tasks/' + taskId)
             .then(res=>{
                 successCallback();
             })

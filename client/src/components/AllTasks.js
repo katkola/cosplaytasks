@@ -17,7 +17,7 @@ const AllTasks = props => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/tasks/")
+        axios.get("http://localhost:8000/api/tasks/")
             .then((res) => {
                 setTasks(res.data);
                 setLoaded(true);
